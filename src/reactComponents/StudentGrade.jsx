@@ -1,8 +1,12 @@
+import "./fail.css"
+import "./pass.css"
+import "./container.css"
 
 
 const Totalgradestudent = (props) => {
-  console.log(props.name,props.marks);
-  
+
+    const ispassed = props.marks >= 50;
+
     let studentGrade = "";
 
     if (props.marks >= 90 && props.marks <= 100) {
@@ -20,8 +24,8 @@ const Totalgradestudent = (props) => {
     else if (props.marks >= 60 && props.marks <= 69) {
         studentGrade = "D";
     }
-    else if (props.marks >= 50 && props.marks <=59 ) {
-        studentGrade = "D";
+    else if (props.marks >= 50 && props.marks <= 59) {
+        studentGrade = "E";
     }
 
     else if (props.marks < 50) {
@@ -31,16 +35,14 @@ const Totalgradestudent = (props) => {
     else {
         studentGrade = 'Number Invalid';
     }
-
     return (
-        <>
-            <p>Your Name :{props.name}</p>
-            <p>Marks: {props.marks}</p>
-            <p>Grade: {studentGrade}</p>
-        </>
+        <div className="conainer">
+            <h2>Your Name :{props.name}</h2>
+            <h3>Marks: {props.marks}</h3>
+            <h4>Grade: <span className={ispassed ? "pass" : "fail"}>{studentGrade}</span></h4>
+        </div>
     )
 };
-
 
 
 
