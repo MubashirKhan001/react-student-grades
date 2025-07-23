@@ -1,4 +1,4 @@
-
+import "./App.css"
 import Studentinfo  from "./reactComponents/marksdisplay";
 
 const App = () => {

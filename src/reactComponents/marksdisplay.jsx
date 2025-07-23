@@ -1,5 +1,5 @@
 import Totalgradestudent from './StudentGrade';
-import "./app.css"
+
 
 const Studentinfo = () => {
 
